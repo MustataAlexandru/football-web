@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 20px;
+}
+
+.nav_container {
+  width: 100%;
+  border-bottom: 2px solid gray;
+  margin: 0 auto;
+}
+.team-logo2 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 12%;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.container100 {
+  width: 100%;
+
+}
+.info_container {
+  margin-top: 2rem;
+}
+
+.card{
+  -webkit-box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+  -moz-box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+  box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.ziar{
+
+  width: 95%;
+  margin: 0 auto;
+}
+
+.teams_button {
+  width: 80%;
+   margin: 0 auto;
+   display: block;
+   margin-top: 1rem;
+   background-color: black;
+   color: white;
+   border-radius: 12px;
+   padding: 12px;
+}
+.teams_button:hover{
+  transition: all 0.5ms;
+  background-color: gray;
+  color: whitesmoke;
+}
+.title {
+  text-align: center;
+}
+.title_container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.teams_container {
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 1420px) {
+  .teams_container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 1070px) {
+  .teams_container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(max-width: 780px) {
+  .teams_container {
+    display: flex;
+    flex-direction: column;
+}
+}
+
+.team_logo_img {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  
+}
+.text-center {
+  text-align: center;
+}
+.custom_flex2{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.mdal {
+  position: absolute;
+  right: 50% !important;
+}
+
+.player_logo {
+  margin-top: 6px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.custom_flex {
+  display: flex;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.width100 {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+
+.width20 {
+  margin: 0 auto;
+  width: 20%;
+}
+
+.bigger-modal {
+  height: 500px !important;
+  width: 700px;
+}
+
+.m-0-a {
+  margin: 0 auto;
+}
+
+.custom-btn {
+  background-color: transparent;
+  color: black;
+  margin: 0 auto;
+}
+
+.custom-btn:hover {
+  cursor: pointer;
+  background-color: #fcffff !important;
+  color: black;
+}
+
+.team-logo-mdal {
+  width: 35px;
+  height: 35px;
+  margin-right: 1rem;
+}
+
+.absolute-bot-right {
+  position: absolute;
+  right: 3%;
+  bottom: 2%;
+}
+
+.cl-black {
+  color: gray;
+  background-color: white;
+  border: none !important;
+}
+
+.container-50 {
+ width: 40%;
+ margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
