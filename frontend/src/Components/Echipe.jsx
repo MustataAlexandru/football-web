@@ -267,7 +267,7 @@ export default function Echipe() {
                 </div>
             </Modal.Header>
             <Modal.Body>
-              <Card className="max-w-lg" imgSrc={require('./imgs/craiova-logo.png')}vertical>
+              <Card className="max-w-lg" imgSrc={require('./imgs/craiova-logo.png')} horizontal>
                 <p>
                   <strong>Coach:</strong>{" "}
                   {currentTeam ? currentTeam.coach : "N/A"}

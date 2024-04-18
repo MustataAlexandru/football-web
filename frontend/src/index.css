@@ -269,9 +269,19 @@ transform: scale(120%);
 
 }
 
+
 .gallery-img {
-  height: 200px;
-  width: 300px;
+  height: 300px;
+  width: 500px;
   border-radius: 10px;
 }
 
+.mg-t-2 {
+  margin-top: 2rem;
+}
+
+@media (max-width: 1370px) {
+  .media-col {
+    flex-direction: column;
+  }
+}
