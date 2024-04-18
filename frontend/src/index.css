@@ -116,6 +116,7 @@ html {
   width: 20px;
   height: 20px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .custom_flex {
@@ -169,6 +170,7 @@ html {
   width: 35px;
   height: 35px;
   margin-right: 1rem;
+  border-radius: 50%;
 }
 
 .absolute-bot-right {
@@ -284,4 +286,10 @@ transform: scale(120%);
   .media-col {
     flex-direction: column;
   }
+}
+
+.team-logo {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: 100%;
 }

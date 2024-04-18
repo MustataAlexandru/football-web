@@ -16,7 +16,7 @@ export default function FirstPage() {
       if (progress < 100) {
         setProgress(progress + 1);
       }
-    }, 70);
+    },2);
 
     return () => clearTimeout(timer);
   }, [progress]);

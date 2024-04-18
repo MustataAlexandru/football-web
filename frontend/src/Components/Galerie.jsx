@@ -2,11 +2,33 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Foter from './Footer';
 import {Card} from 'flowbite-react';
+import { Progress } from "flowbite-react";
+import React, { useEffect, useState } from "react";
 
 export default function Galerie ()   {
+  const [progress, setProgress] = useState(0);
+  
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (progress < 100) {
+        setProgress(progress + 1);
+      }
+    },4);
+
+    return () => clearTimeout(timer);
+  }, [progress]);
   return (
     <div>
-   
+    <Progress
+          className={`container ${ progress == 100 ? ' hidden' : ''}`}
+          progress={progress}
+          textLabel=""
+          size="lg"
+          labelProgress
+          labelText
+          style={{marginTop: '2rem', position: 'absolute' , width: '80%', bottom:'52%' , zIndex: '100', backgroundColor: 'transparent'}}
+        />
     <div className='container mg-t-2'>
       <Swiper
       spaceBetween={20}

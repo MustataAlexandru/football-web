@@ -135,7 +135,7 @@ export default function Echipe() {
                 {team.players.map((player) => (
                   <li key={player.id}>
                     <div className="flex">
-                      <img src={img} className="player_logo" alt="player" />
+                      <img src={require('./neymar22.jpg')} className="player_logo" alt="player" />
                       {player.name}
                     </div>
                   </li>
@@ -262,12 +262,13 @@ export default function Echipe() {
           >
             <Modal.Header>
                  <div className="flex">
-                <img className="team-logo-mdal" src={require('./imgs/craiova.png')} alt ="team logo" />
+                <img className="team-logo-mdal" src={require('./craiova.png')} alt ="team logo" />
                 {currentTeam.name}
                 </div>
             </Modal.Header>
             <Modal.Body>
-              <Card className="max-w-lg" imgSrc={require('./imgs/craiova-logo.png')} horizontal>
+              <div className="" imgSrc={require('./echipa23.jpg')} vertical>
+                <img src={require('./echipa23.jpg')} className="team-logo"></img>
                 <p>
                   <strong>Coach:</strong>{" "}
                   {currentTeam ? currentTeam.coach : "N/A"}
@@ -276,17 +277,17 @@ export default function Echipe() {
                   <strong>Manager:</strong>{" "}
                   {currentTeam ? currentTeam.manager : "N/A"}
                 </p>
-                <p>
+                <p style={{borderBottom: '1px solid gray'}}>
                   <strong>Administrator:</strong>{" "}
                   {currentTeam ? currentTeam.administrator : "N/A"}
                 </p>
                 <p>
-                  <strong>Description:</strong>{" "}
+                  <strong></strong>{" "}
                   {currentTeam
                     ? currentTeam.description
                     : "No description available."}
                 </p>
-              </Card>
+              </div>
             </Modal.Body>
             <Modal.Footer>
               <Button
