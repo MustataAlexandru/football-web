@@ -18,6 +18,7 @@ html {
   height: 50px;
   position: absolute;
   right: 12%;
+  
 }
 .container {
   width: 80%;
@@ -189,4 +190,41 @@ html {
 
 .hidden {
   display: none;
+}
+.visible {
+  display: inline-block;
+}
+
+.mg {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.custom_form {
+  border-radius: 10px;
+  padding: 20px;
+  width: 40%;
+  -webkit-box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+  -moz-box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+  box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+}
+
+.custom-flex {
+ display: flex;
+ gap: 5rem;
+}
+
+@media (max-width: 1330px ) {
+  .media-0-a {
+    margin: 0 auto;
+  }
+  .custom-flex {
+    flex-direction: column-reverse;
+    
+  }
+  .custom_form {
+    width: 80%;
+    margin: 0 auto;
+  }
 }

@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Modal, Button, Card } from "flowbite-react";
 import "flowbite";
 import Foter from "./Footer";
+import { Alert } from "flowbite-react";
+
 const img = "./logo192.png";
 
 export default function Echipe() {
 
+  const [alert , setAlert] = useState('hidden');
   const [teams, setTeams] = useState([]);
   const [isPlayerModalOpen, setIsPlayerModalOpen] = useState(false);
   const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);
@@ -21,6 +24,13 @@ export default function Echipe() {
   });
   const [selectedTeamId, setSelectedTeamId] = useState(null);
 
+  const alertToggle =() => {
+    setAlert('visible');
+        setTimeout(() => {
+          setAlert('hidden');
+        }, 4000);
+  }
+
   const fetchTeams = () => {
     fetch("http://localhost:3001/echipe")
       .then((res) => res.json())
@@ -32,7 +42,7 @@ export default function Echipe() {
     fetchTeams();
   }, []);
 
-  const handleAddPlayer = (e) => {
+  const handleAddPlayer = e => {
     e.preventDefault();
     if (!playerName.trim()) return;
     fetch("http://localhost:3001/echipe/add", {
@@ -43,18 +53,19 @@ export default function Echipe() {
         playerName: playerName.trim(),
       }),
     })
-      .then((response) => response.json())
+      .then(response => response.json())
       .then(() => {
         setPlayerName("");
         setIsPlayerModalOpen(false);
+        alertToggle();
         fetchTeams();
       })
-      .catch((error) => {
+      .catch( error => {
         console.error("Error adding player:", error);
       });
   };
 
-  const handleAddTeam = (e) => {
+  const handleAddTeam = e => {
     e.preventDefault();
     const { name, manager, administrator, coach, description } = teamDetails;
     if (!name.trim()) return;
@@ -69,7 +80,7 @@ export default function Echipe() {
         description,
       }),
     })
-      .then((response) => response.json())
+      .then( (response) => response.json())
       .then(() => {
         setTeamDetails({
           name: "",
@@ -79,9 +90,10 @@ export default function Echipe() {
           description: "",
         });
         setIsTeamModalOpen(false);
+        alertToggle();
         fetchTeams();
       })
-      .catch((error) => {
+      .catch( error => {
         console.error("Error adding team:", error);
       });
   };
@@ -91,6 +103,9 @@ export default function Echipe() {
       <Button className="width20" onClick={() => setIsTeamModalOpen(true)}>
         Add Team
       </Button>
+      <Alert className={`mg mt-2 width50 ${alert}`} color="info">
+      <span className="font-medium mg text-center">Succesfully added!</span>
+    </Alert>
       <div className="teams_container p-4">
         {teams.map((team) => (
           <div
@@ -144,7 +159,7 @@ export default function Echipe() {
             onClose={() => setIsPlayerModalOpen(false)}
             size="md"
           >
-            <Modal.Header>Add Player to Team</Modal.Header>
+            <Modal.Header>Add Player to the Team</Modal.Header>
             <Modal.Body>
               <form onSubmit={handleAddPlayer} className="flex flex-col gap-3">
                 <input
@@ -248,7 +263,7 @@ export default function Echipe() {
             <Modal.Header>
                  <div className="flex">
                 <img className="team-logo-mdal" src="logo192.png" alt ="team logo" />
-                {currentTeam ? currentTeam.name : "Team Information"}
+                {currentTeam.name}
                 </div>
             </Modal.Header>
             <Modal.Body>
