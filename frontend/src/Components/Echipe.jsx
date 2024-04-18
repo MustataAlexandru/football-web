@@ -122,7 +122,7 @@ export default function Echipe() {
               >
                 Add Player
               </Button>
-              <img src={img} alt="Team Logo" className="w-12 h-12" />
+              <img src={require('./imgs/craiova-logo.png')} alt="Team Logo" className="w-12 h-12" />
               <p className="title font-bold">{team.name}</p>
             </div>
 
@@ -262,12 +262,12 @@ export default function Echipe() {
           >
             <Modal.Header>
                  <div className="flex">
-                <img className="team-logo-mdal" src="logo192.png" alt ="team logo" />
+                <img className="team-logo-mdal" src={require('./imgs/craiova.png')} alt ="team logo" />
                 {currentTeam.name}
                 </div>
             </Modal.Header>
             <Modal.Body>
-              <Card className="max-w-sm" imgSrc="logo192.png" vertical>
+              <Card className="max-w-lg" imgSrc={require('./imgs/craiova-logo.png')}vertical>
                 <p>
                   <strong>Coach:</strong>{" "}
                   {currentTeam ? currentTeam.coach : "N/A"}
