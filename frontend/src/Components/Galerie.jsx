@@ -10,7 +10,7 @@ export default function Galerie ()   {
     <div className='container mg-t-2'>
       <Swiper
       spaceBetween={20}
-      slidesPerView={2}
+      slidesPerView={3}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
