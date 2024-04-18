@@ -13,7 +13,7 @@ export default function Nav() {
    <div className="nav_container">
     <Navbar fluid rounded>
       <Navbar.Brand >
-        <img src="logo192.png" className="mr-3 h-6 sm:h-9" alt="SportDirect" />
+        <img src={require('./imgs/craiova-logo.png')} className="mr-3 h-6 sm:h-9" alt="SportDirect" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Universitatea Craiova</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
