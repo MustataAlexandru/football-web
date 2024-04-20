@@ -15,9 +15,7 @@ export default function Contact() {
 
   return (
     <div>
-      <h1 className='text-center mb-4 mt-4'><strong>Contact</strong></h1>
-      
-        <ol className='icon_cont'>
+        <ol className='icon_cont mg-t-2'>
           <li><a href="https://facebook.com"><TiSocialFacebook style={{color: 'gray' , }} size={32}></TiSocialFacebook></a></li>
           <li><a href="https://instagram.com"><TiSocialInstagram style={{color: 'gray' , }} size={32}></TiSocialInstagram></a></li>
           <li><a href="https://linkedin.com"><TiSocialLinkedin style={{color: 'gray' , }} size={32}></TiSocialLinkedin></a></li>
@@ -31,7 +29,11 @@ export default function Contact() {
       
       <div className='custom-flex'>
       <form type="submit" onSubmit={submitHandler} className="custom_form">
+<<<<<<< HEAD
         <h1 className='text-center'><strong>Send us an email!</strong></h1>
+=======
+        <h1 className='text-center'><strong>Send us an email</strong></h1>
+>>>>>>> 6b683aac64280ec32f1acae8002e23871974d446
       <div className="">
       <div className="mb-2 block">
         <Label htmlFor="email4" value="Your email" />

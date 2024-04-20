@@ -123,6 +123,7 @@ html {
   width: 20px;
   height: 20px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .custom_flex {
@@ -176,6 +177,7 @@ html {
   width: 35px;
   height: 35px;
   margin-right: 1rem;
+  border-radius: 50%;
 }
 
 .absolute-bot-right {
@@ -293,6 +295,7 @@ transform: scale(120%);
   }
 }
 
+<<<<<<< HEAD
 .nav_btn {
   padding: 0 20px ;
   background-color: rgb(14 116 144 / var(--tw-bg-opacity));
@@ -305,4 +308,10 @@ transform: scale(120%);
 
 .color-gray {
   color: gray;
+=======
+.team-logo {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: 100%;
+>>>>>>> 6b683aac64280ec32f1acae8002e23871974d446
 }
