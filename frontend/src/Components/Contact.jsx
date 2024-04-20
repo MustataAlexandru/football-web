@@ -54,7 +54,7 @@ export default function Contact() {
       {textData}
       </p>
     </Card>
-    
+  
     </div>
       <Foter />
     </div>

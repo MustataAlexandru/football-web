@@ -1,12 +1,13 @@
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { Navbar } from "flowbite-react";
+import { Button, Navbar } from "flowbite-react";
 import About from "./Sectii";
 import Galerie from "./Galerie";
 import Sectii from "./Sectii";
 import Echipe from "./Echipe";
 import Anunturi from "./Anunturi";
 import Contact from "./Contact";
+import Register from "./Register";
 
 export default function Nav() {
   return (
@@ -36,6 +37,9 @@ export default function Nav() {
         </Navbar.Link>
         <Navbar.Link href="#">
         <Link to ="/contact" element={<Contact/>}>Contact</Link>
+        </Navbar.Link>
+        <Navbar.Link href="#">
+        <Link to ="/register" element={<Register/>}><button className="nav_btn">Login</button></Link>
         </Navbar.Link>
       </Navbar.Collapse>
 

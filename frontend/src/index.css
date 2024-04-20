@@ -32,6 +32,13 @@ html {
   margin-top: 2rem;
 }
 
+.box-shadow {
+  -webkit-box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+  -moz-box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+  box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
+  padding: 25px;
+  border-radius: 10px;
+}
 .card{
   -webkit-box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
   -moz-box-shadow: -5px -2px 37px -19px rgba(0,0,0,0.56);
@@ -284,4 +291,18 @@ transform: scale(120%);
   .media-col {
     flex-direction: column;
   }
+}
+
+.nav_btn {
+  padding: 0 20px ;
+  background-color: rgb(14 116 144 / var(--tw-bg-opacity));
+  color: white;
+  border:none;
+  border-radius: 10px;
+  font-weight: 500;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.color-gray {
+  color: gray;
 }

@@ -10,6 +10,7 @@ import FirstPage from "./Components/FirstPage";
 import { Toast } from "flowbite-react";
 import { FaHeart } from "react-icons/fa";
 import { MdPermIdentity } from "react-icons/md";
+import Register from "./Components/Register";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/echipe" element={<Echipe />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/anunturi" element={<Anunturi />} />
+        <Route path='/register' element={<Register /> } />
       </Routes>
     </div>
   );
