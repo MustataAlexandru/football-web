@@ -95,6 +95,27 @@ app.post('/echipe/new', (req, res) => {
     });
 });
 
+app.post('/users/new', (req , res) => {
+    const {email , username , password } = req.body;
+    const sql = "INSERT INTO users (email , username , password) VALUES (?, ? , ?)"
+    db.query(sql, [email, username, password], (err , result)=> {
+        if(err) {
+            console.error('Error adding user', err)
+            res.status(500).json({
+                error: err.message
+            })
+            return
+        } else res.status(201).json({
+            message: 'USER ADDED SUCCESFULLY'
+        })
+    })
+})
+
+// app.get('/users' , (req,res)=> {
+//     const [username , password] = req.body;
+//     const sql = `SELECT * FROM users WHERE username = ${username}`;
+// })
+
 app.listen(3001, () => {
     console.log('Server running on port 3001');
 });
