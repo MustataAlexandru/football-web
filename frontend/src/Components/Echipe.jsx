@@ -4,7 +4,6 @@ import "flowbite";
 import Foter from "./Footer";
 import { Alert } from "flowbite-react";
 
-const img = "./logo192.png";
 
 export default function Echipe() {
 

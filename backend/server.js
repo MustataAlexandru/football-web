@@ -40,6 +40,7 @@ app.get('/echipe', (req, res) => {
             players p ON t.id = p.p_team_id;
     `;
     db.query(sql, (err, results) => {
+        
         if (err) {
             console.error('Error fetching teams with players:', err);
             res.status(500).json({ error: err.message });
@@ -51,6 +52,7 @@ app.get('/echipe', (req, res) => {
                     id: item.teamId,
                     name: item.teamName,
                     manager: item.manager,
+                   
                     administrator: item.administrator,
                     coach: item.antrenor,
                     description: item.description,
@@ -83,9 +85,10 @@ app.post('/echipe/add', (req, res) => {
 });
 
 app.post('/echipe/new', (req, res) => {
-    const { nume, manager, administrator, antrenor, description } = req.body;
+    
+    const { nume, manager, administrator, antrenor, description  } = req.body;
     const sql = "INSERT INTO teams (nume, manager, administrator, antrenor, description) VALUES (?, ?, ?, ?, ?)";
-    db.query(sql, [nume, manager, administrator, antrenor, description], (err, result) => {
+    db.query(sql, [nume, manager, administrator, antrenor, description ], (err, result) => {
         if (err) {
             console.error('Error adding team:', err);
             res.status(500).json({ error: err.message });
