@@ -31,6 +31,7 @@ export default function Contact() {
       
       <div className='custom-flex'>
       <form type="submit" onSubmit={submitHandler} className="custom_form">
+        <h1 className='text-center'><strong>Send us an email!</strong></h1>
       <div className="">
       <div className="mb-2 block">
         <Label htmlFor="email4" value="Your email" />
@@ -41,7 +42,7 @@ export default function Contact() {
       <div className="mb-2 block">
         <Label htmlFor="comment" value="Your message" />
       </div>
-      <Textarea id="comment" placeholder="Send us a message!" required rows={4} />
+      <Textarea id="comment" placeholder="Send us a message!" required rows={12} />
     </div>
     <Button type="submit" className='width100 mt-4'>Submit</Button>
     </form>
