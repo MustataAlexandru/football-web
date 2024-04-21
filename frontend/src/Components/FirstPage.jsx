@@ -24,7 +24,7 @@ export default function FirstPage() {
     <div className="container80">
       <div className="info_container">
         <Progress
-          className={`mb-8 ${ progress == 100 ? ' hidden' : ''}`}
+          className={`mb-8 abs ${ progress == 100 ? ' hidden' : ''}`}
           progress={progress}
           textLabel=""
           size="lg"

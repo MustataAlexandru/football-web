@@ -15,11 +15,19 @@ html {
   border-bottom: 2px solid gray;
   margin: 0 auto;
 }
+
+.card {
+  position: relative;
+}
+
 .team-logo2 {
   width: 50px;
   height: 50px;
   position: absolute;
-  right: 12%;
+  right: 2%;
+  top: 3%;
+  
+  
   
 }
 .container {
@@ -32,6 +40,15 @@ html {
 }
 .info_container {
   margin-top: 2rem;
+}
+
+
+.abs {
+   margin: 0 auto;
+  position: absolute;
+  z-index: 100;
+  top: -1.5%;
+  
 }
 
 .box-shadow {
@@ -186,6 +203,7 @@ html {
   position: absolute;
   right: 3%;
   bottom: 2%;
+  z-index: 100;
 }
 
 .cl-black {
@@ -393,5 +411,5 @@ img {
   animation: loading 0.5s ease-in;
 }
 .nav_container {
-  animation: loading 0.2s ease-in;
+  animation: loading 0.5s ease-in;
 }
