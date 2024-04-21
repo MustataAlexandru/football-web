@@ -33,7 +33,7 @@ export default function Contact() {
   }
 
   return (
-    <div>
+    <div className='c_container'>
       <Alert className={`mg mt-2 width50 ${alert}`} color="info">
       <span className="font-medium mg text-center">Email sent succesfully!</span>
     </Alert>

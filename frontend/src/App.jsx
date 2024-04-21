@@ -1,6 +1,6 @@
 import "./App.css";
 import Nav from "./Components/Nav";
-import { Route, Routes,Router ,Link, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Sectii from "./Components/Sectii";
 import Galerie from "./Components/Galerie";
 import Echipe from "./Components/Echipe";
@@ -8,13 +8,12 @@ import Contact from "./Components/Contact";
 import Anunturi from "./Components/Anunturi";
 import FirstPage from "./Components/FirstPage";
 import { Toast } from "flowbite-react";
-import { FaHeart } from "react-icons/fa";
 import { MdPermIdentity } from "react-icons/md";
 import Register from "./Components/Register";
 import { UserProvider } from "./ContextProvider/UserProvider";
 
 function App() {
-  const user = localStorage.getItem('user');
+  
  
   return (
     

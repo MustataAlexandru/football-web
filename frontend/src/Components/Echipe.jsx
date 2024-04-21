@@ -98,7 +98,7 @@ export default function Echipe() {
   };
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 t_container">
       { user && user.role === 1 &&
       <Button className="width20" onClick={() => setIsTeamModalOpen(true)}>
         Add Team

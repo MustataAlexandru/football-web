@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState , useEffect} from 'react';
+import { Navigate } from "react-router-dom";
 
 const UserContext = createContext({ user: null, login: () => {}, logout: () => {} , isLoggedIn: null});
 
@@ -16,6 +17,7 @@ export const UserProvider = ({ children }) => {
         setUser(null);
         setIsLoggedIn(false)
         localStorage.removeItem('user');
+        return <Navigate to ='/account' />
     };
 
     useEffect(() => {

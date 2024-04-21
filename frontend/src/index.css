@@ -8,6 +8,8 @@ html {
   font-size: 20px;
 }
 
+
+
 .nav_container {
   width: 100%;
   border-bottom: 2px solid gray;
@@ -337,4 +339,59 @@ transform: scale(120%);
   border-radius: 50%;
   width: 5rem;
   height: 5rem;
+}
+
+img {
+  display: block;
+  object-position: center;
+  object-fit: cover;
+}
+
+.blur-load {
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes fading-up {
+  0% {
+    opacity: 1;
+    transform: translate(240px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px) scale(1);
+  }
+}
+
+.animated_container {
+  animation: fading-up 0.5 ease-out;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+    filter: blur(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
+
+.container {
+  animation:loading 0.5s ease-in;
+}
+.info_container {
+  animation: loading 0.5s ease-in;
+}
+.t_container {
+  animation: loading 0.5s ease-in;
+}
+.c_container {
+  animation: loading 0.5s ease-in;
+}
+.nav_container {
+  animation: loading 0.2s ease-in;
 }
