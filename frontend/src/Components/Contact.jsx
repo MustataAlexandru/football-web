@@ -37,7 +37,7 @@ export default function Contact() {
       <Alert className={`mg mt-2 width50 ${alert}`} color="info">
       <span className="font-medium mg text-center">Email sent succesfully!</span>
     </Alert>
-        <ol className='icon_cont mg-t-2'>
+        <ol className='icon_cont mg-t-2 animated_fadeIn'>
           <li><a href="https://facebook.com"><TiSocialFacebook style={{color: 'gray' , }} size={32}></TiSocialFacebook></a></li>
           <li><a href="https://instagram.com"><TiSocialInstagram style={{color: 'gray' , }} size={32}></TiSocialInstagram></a></li>
           <li><a href="https://linkedin.com"><TiSocialLinkedin style={{color: 'gray' , }} size={32}></TiSocialLinkedin></a></li>
@@ -49,7 +49,7 @@ export default function Contact() {
           <li><a href="https://youtube.com"><TiSocialYoutube style={{color: 'gray' ,}} size={32}></TiSocialYoutube></a></li>
         </ol>
       
-      <div className='custom-flex'>
+      <div className='custom-flex animated_fadeIn'>
       <form type="submit" ref={form} onSubmit={submitHandler} className="custom_form">
 
         <h1 className='text-center'><strong>Send us an email!</strong></h1>
@@ -78,7 +78,7 @@ export default function Contact() {
     </Card>
   
     </div>
-      <Foter />
+      
     </div>
   )
 }

@@ -10,10 +10,31 @@ html {
 
 
 
+.announces_container {
+  width: 100%;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.grid {
+  grid-template-columns: 1fr;
+}
+
 .nav_container {
   width: 100%;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid #E5E7EB;
+  z-index: 50;
+  position: fixed;
   margin: 0 auto;
+  top:0%;
+  left: 0%;
+  border-radius: 0.5rem;
+}
+
+.footer {
+  border-top: 2px solid #E5E7EB;
 }
 
 .card {
@@ -38,6 +59,14 @@ html {
   width: 100%;
 
 }
+.container-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+
+
 .info_container {
   margin-top: 2rem;
 }
@@ -47,7 +76,7 @@ html {
    margin: 0 auto;
   position: absolute;
   z-index: 100;
-  top: -1.5%;
+  top: 11.5%;
   
 }
 
@@ -200,7 +229,7 @@ html {
 }
 
 .absolute-bot-right {
-  position: absolute;
+  position: fixed;
   right: 3%;
   bottom: 2%;
   z-index: 100;
@@ -396,20 +425,81 @@ img {
   }
 }
 
+@keyframes fadeInUp{
+  0% {
+     opacity: 0.5;
+     transform: translate(-100px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
 
+.animated_fadeIn {
+  animation: fadeInUp .4s linear forwards;
+  
+}
 
 .container {
+  margin-top: 8rem;
   animation:loading 0.5s ease-in;
 }
 .info_container {
-  animation: loading 0.5s ease-in;
+  animation: loading 0.5s linear forwards;
+  margin-top : -0.06rem;
 }
 .t_container {
+  margin-top: 8rem;
+
   animation: loading 0.5s ease-in;
 }
 .c_container {
+  margin-top: 8rem;
+
   animation: loading 0.5s ease-in;
 }
 .nav_container {
   animation: loading 0.5s ease-in;
+  
+}
+
+.navbar-fixed {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.scroll-btn {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  left: 2.5%;
+  bottom: 10%;
+  z-index: 200;
+}
+.btn-icon {
+  font-size: 42px;
+}
+
+@media (max-width:980px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 90%;
+  }
+}
+article {
+  margin: 0 !important;
+}
+
+.announces_container_first {
+  display:flex;
+  flex-direction: column;
+  gap: 4rem;
+  animation: loading 0.5s linear forwards;
 }

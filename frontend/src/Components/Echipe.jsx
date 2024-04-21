@@ -91,14 +91,14 @@ export default function Echipe() {
         setIsTeamModalOpen(false);
         alertToggle();
         fetchTeams();
-      })
+     })
       .catch( error => {
         console.error("Error adding team:", error);
       });
   };
 
   return (
-    <div className="mt-6 t_container">
+    <div className="mt-2 t_container">
       { user && user.role === 1 &&
       <Button className="width20" onClick={() => setIsTeamModalOpen(true)}>
         Add Team
@@ -106,11 +106,11 @@ export default function Echipe() {
       <Alert className={`mg mt-2 width50 ${alert}`} color="info">
       <span className="font-medium mg text-center">Succesfully added!</span>
     </Alert>
-      <div className="teams_container p-4">
+      <div className="teams_container p-4"> 
         {teams.map((team) => (
           <div
             key={team.id}
-            className="card bg-white shadow-lg rounded-lg p-6 m-2"
+            className="card bg-white shadow-lg rounded-lg p-6 m-2 "
           >
             <div className="title_container flex items-center gap-1">
               { user && user.role === 1 &&
@@ -302,7 +302,7 @@ export default function Echipe() {
           </Modal>
         )}
       </div>
-      <Foter />
+     
     </div>
   );
 }

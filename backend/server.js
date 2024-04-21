@@ -128,13 +128,13 @@ app.post('/users/new', (req, res) => {
     });
 });
 
-app.post('/users/login', (req, res) => {
-    const { username, password } = req.body;
+app.post('/users/login', (request, response) => {
+    const { username, password } = request.body;
     const sql = `SELECT * FROM users WHERE username = ?`;
-    db.query(sql, [username], async (err, results) => {
-        if (err) {
+    db.query(sql, [username], async (error, results) => {
+        if (error) {
             console.error(err);
-            res.status(500).json({
+            response.status(500).json({
                 error: 'Database error',
                 message: err.message
             });
@@ -143,16 +143,49 @@ app.post('/users/login', (req, res) => {
         if (results.length > 0) {
             comparisonResult = true;
             if (comparisonResult) {
-                res.status(200).json({
+                response.status(200).json({
                     message: 'Logged in successfully',
                     user: results[0]
                 });
             } else {
-                res.status(401).json({ message: 'Password is incorrect' });
+                response.status(401).json({ message: 'Password is incorrect' });
             }
         } else {
-            res.status(404).json({ message: 'Username does not exist' });
+            response.status(404).json({ message: 'Username does not exist' });
         }
+    });
+});
+
+app.post('/announces/new' , (request , response)=> {
+    const {title , created_by , content} = request.body;
+    console.log(title.trim() , created_by.trim() , content.trim());
+    console.log(request.body);
+    const sql = "INSERT INTO announces (title , created_by , content) VALUES (? , ? , ?)"
+    db.query(sql , [title , created_by , content] , (error) => {
+        if(error) {
+             console.error(error)
+            response.status(500).json({
+                error: error,
+                message: error.message
+            })
+             return
+            } else {
+                response.status(201).json(
+                    {message: "succesfully added!"}
+                )
+            }
+    })
+})
+
+app.get('/announces', (request, response) => {
+    const sql = `SELECT * FROM announces ORDER BY id DESC`;
+    db.query(sql, (err, results) => {
+        if (err) {
+            console.error('Database error:', err);
+            return response.status(500).json({ error: 'Internal server error' });
+        }
+        console.log('Database results:', results);
+        response.json(results);
     });
 });
 

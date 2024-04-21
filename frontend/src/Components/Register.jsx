@@ -55,8 +55,6 @@ export default function Register() {
               // setTimeout(() =>{
               //   setProgressVisible('visible');
               // })
-          
-               
           } else {
               throw new Error(data.message);
           }
@@ -202,7 +200,7 @@ export default function Register() {
      
       </div>
     )}
-    <Foter />
+   
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import React , {useEffect , useState} from 'react'
 import "./App.css";
 import Nav from "./Components/Nav";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -11,13 +12,45 @@ import { Toast } from "flowbite-react";
 import { MdPermIdentity } from "react-icons/md";
 import Register from "./Components/Register";
 import { UserProvider } from "./ContextProvider/UserProvider";
+import { AiOutlineArrowUp } from "react-icons/ai";
+import {Button} from 'flowbite-react';
+import Foter from './Components/Footer';
+
 
 function App() {
-  
+
+  const [showsScrolBtn, setShowScrolBtn] = useState(false);
+
+useEffect(() => {
+  const handleButtonVisibility = () => {
+    window.scrollY > 300 ? setShowScrolBtn(true) : setShowScrolBtn(false);
+  };
+
+  window.addEventListener("scroll", handleButtonVisibility);
+  return () => {
+    window.addEventListener("scroll", handleButtonVisibility);
+  };
+}, []);
  
   return (
     
     <UserProvider>
+      <div>
+      
+      {
+  showsScrolBtn && (
+    <Button className='scroll-btn'
+      onClick={() => {window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }}
+    >
+      <AiOutlineArrowUp className='btn-icon' />
+    </Button>
+  )
+}
     <div className="container">
       <Nav />
       <Toast className='absolute-bot-right'>
@@ -38,6 +71,8 @@ function App() {
         <Route path='/account' element={<Register /> } />
         <Route path='*' element={<Navigate to='/account' />}/>
       </Routes>
+    </div>
+    <Foter className="footer" />
     </div>
     </UserProvider>
    

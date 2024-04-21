@@ -6,7 +6,7 @@ import { SlSocialSpotify } from "react-icons/sl";
 
 export default function Foter() {
   return (
-    <Footer className="mt-8" container>
+    <Footer className="mt-8 footer" container>
       <Footer.Copyright href="#" by="Mustata Alexandru-Cristian @ PROIECT LABORATOR WEB" year={2024} />
       <Footer.LinkGroup>
         <Footer.Link href="https://www.instagram.com/mustata_alexandru123/" ><TiSocialFacebook size={32} /></Footer.Link>
