@@ -3,7 +3,7 @@ import { Modal, Button, Card } from "flowbite-react";
 import "flowbite";
 import Foter from "./Footer";
 import { Alert } from "flowbite-react";
-
+import { useUser } from "../ContextProvider/UserProvider";
 
 export default function Echipe() {
 
@@ -22,7 +22,7 @@ export default function Echipe() {
     description: "",
   });
   const [selectedTeamId, setSelectedTeamId] = useState(null);
-
+  const {user} = useUser();
   const alertToggle =() => {
     setAlert('visible');
         setTimeout(() => {
@@ -99,9 +99,10 @@ export default function Echipe() {
 
   return (
     <div className="mt-6">
+      { user && user.role === 1 &&
       <Button className="width20" onClick={() => setIsTeamModalOpen(true)}>
         Add Team
-      </Button>
+      </Button>}
       <Alert className={`mg mt-2 width50 ${alert}`} color="info">
       <span className="font-medium mg text-center">Succesfully added!</span>
     </Alert>
@@ -112,6 +113,7 @@ export default function Echipe() {
             className="card bg-white shadow-lg rounded-lg p-6 m-2"
           >
             <div className="title_container flex items-center gap-1">
+              { user && user.role === 1 &&
               <Button
                 className="width100"
                 onClick={() => {
@@ -120,8 +122,8 @@ export default function Echipe() {
                 }}
               >
                 Add Player
-              </Button>
-              <img src={require('./imgs/craiova-logo.png')} alt="Team Logo" className="w-12 h-12" />
+              </Button>}
+              <img src={require('./imgs/craiova-logo.png')} alt="Team Logo" className="w-12 h-12 mb-4 mt-4 img-card-container box-shadow" />
               <p className="title font-bold">{team.name}</p>
             </div>
 

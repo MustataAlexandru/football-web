@@ -6,6 +6,16 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");  // Allow any domain
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    if (req.method === 'OPTIONS') {
+        res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+        return res.status(200).json({});
+    }
+    next();
+});
+
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -95,6 +105,54 @@ app.post('/echipe/new', (req, res) => {
             return;
         }
         res.status(201).json({ message: "Team added successfully" });
+    });
+});
+
+app.post('/users/new', (req, res) => {
+    const { email, username, password } = req.body;
+    const sql = "INSERT INTO users (email, username, password) VALUES (?, ?, ?)";
+    console.log(email, username, password);
+    // const hashedPassword = bcrypt.hash(password , genSalt);
+    db.query(sql, [email, username, password], (err) => {
+        if (err) {
+            console.error('Error adding user', err);
+            res.status(500).json({
+                error: 'Failed to add user',
+                message: err.message
+            });
+            return;
+        }
+        res.status(201).json({
+            message: 'USER ADDED SUCCESSFULLY'
+        });
+    });
+});
+
+app.post('/users/login', (req, res) => {
+    const { username, password } = req.body;
+    const sql = `SELECT * FROM users WHERE username = ?`;
+    db.query(sql, [username], async (err, results) => {
+        if (err) {
+            console.error(err);
+            res.status(500).json({
+                error: 'Database error',
+                message: err.message
+            });
+            return;
+        }
+        if (results.length > 0) {
+            comparisonResult = true;
+            if (comparisonResult) {
+                res.status(200).json({
+                    message: 'Logged in successfully',
+                    user: results[0]
+                });
+            } else {
+                res.status(401).json({ message: 'Password is incorrect' });
+            }
+        } else {
+            res.status(404).json({ message: 'Username does not exist' });
+        }
     });
 });
 

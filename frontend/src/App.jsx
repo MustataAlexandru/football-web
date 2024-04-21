@@ -1,6 +1,6 @@
 import "./App.css";
 import Nav from "./Components/Nav";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes,Router ,Link, Navigate } from "react-router-dom";
 import Sectii from "./Components/Sectii";
 import Galerie from "./Components/Galerie";
 import Echipe from "./Components/Echipe";
@@ -10,9 +10,15 @@ import FirstPage from "./Components/FirstPage";
 import { Toast } from "flowbite-react";
 import { FaHeart } from "react-icons/fa";
 import { MdPermIdentity } from "react-icons/md";
+import Register from "./Components/Register";
+import { UserProvider } from "./ContextProvider/UserProvider";
 
 function App() {
+  const user = localStorage.getItem('user');
+ 
   return (
+    
+    <UserProvider>
     <div className="container">
       <Nav />
       <Toast className='absolute-bot-right'>
@@ -30,8 +36,12 @@ function App() {
         <Route path="/echipe" element={<Echipe />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/anunturi" element={<Anunturi />} />
+        <Route path='/account' element={<Register /> } />
+        <Route path='*' element={<Navigate to='/account' />}/>
       </Routes>
     </div>
+    </UserProvider>
+   
   );
 }
 
