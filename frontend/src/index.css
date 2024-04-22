@@ -388,6 +388,11 @@ transform: scale(120%);
   height: 5rem;
 }
 
+.margin-top-1 {
+  margin-top: 1rem;
+  animation : loading .5s ease-in;
+}
+
 img {
   display: block;
   object-position: center;
@@ -502,4 +507,19 @@ article {
   flex-direction: column;
   gap: 4rem;
   animation: loading 0.5s linear forwards;
+}
+
+
+
+.user-logo {
+  width:60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.custom_admin_user {
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }

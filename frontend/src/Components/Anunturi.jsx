@@ -5,6 +5,7 @@ import './announces.css';
 import { UserProvider, useUser } from '../ContextProvider/UserProvider';
 import { Alert } from 'flowbite-react';
 import { Card } from "flowbite-react";
+import { FloatingLabel } from "flowbite-react";
 
 export default function Anunturi() {
   const [alert , setAlert] = useState('hidden');
@@ -58,9 +59,10 @@ export default function Anunturi() {
 
     useEffect(() => {fetchAnnounces()}, [alert]);
     console.log(announces);
+    console.log(user);
   return (
     <div className='container'>
-      {isLoggedIn && user.role === 1 (<Button type="submit" className='width20' onClick={() => setIsAnnouncesModalOpen(true)}>Add announcement</Button>)}
+      {  user?.role === 1 && (<Button type="submit" className='width20' onClick={() => setIsAnnouncesModalOpen(true)}>Add announcement</Button>)}
       
       <Alert className={`mg mt-2 width50 ${alert}`} color="info">
       <span className="font-medium mg text-center">Succesfully added!</span>
@@ -73,8 +75,8 @@ export default function Anunturi() {
       <p className="font-normal text-gray-700 dark:text-gray-400">
         {announce.content}
       </p>
-      <p>by - {announce.created_by}</p>
-      <p> {announce.created_at} </p>
+      <p style={{color: 'gray'}}>by {announce.created_by}</p>
+      <p style={{color: 'gray'}}> {announce.created_at} </p>
     </Card>))}
     </div>
       {isAnnouncesModalOpen && (
@@ -86,15 +88,15 @@ export default function Anunturi() {
             <Modal.Header > Add New Announcement</Modal.Header>
             <Modal.Body>
               <form onSubmit={handleAddAnnouncement} className="flex flex-col gap-3">
-               
-                <input
-                  type="text"
-                  className="form-input mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              
+                <FloatingLabel
+                  type="text"     
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  placeholder="Title"
+                  variant="outlined" label="Title"
                   required
                 />
+                
                 <Textarea
                   rows={10}
                   type="text"

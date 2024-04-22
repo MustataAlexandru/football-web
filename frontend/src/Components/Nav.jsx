@@ -48,9 +48,9 @@ export default function Nav() {
             <span className="block text-sm">{user.username}</span>
             <span className="block truncate text-sm font-medium">{user.email}</span>
           </Dropdown.Header>
-         {user && user.role === 0 && (<Dropdown.Item><Link to='/admin' element={<Admin />}>Admin</Link></Dropdown.Item>)}
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
+         {user && user.role === 1 && (<Dropdown.Item><Link to='/admin' element={<Admin />}>Admin</Link></Dropdown.Item>)}
+      
+          
           <Dropdown.Divider />
           <Dropdown.Item><button onClick={logout}>Sign out</button></Dropdown.Item>
         </Dropdown>
@@ -63,7 +63,7 @@ export default function Nav() {
         <Navbar.Link href="#" active={navActive.second} onClick={() =>setNavActive({first: false, second: true , third: false , fourth: false , fifth: false , sixth: false})}> <Link to='/sectii' element={<Sectii />}>Sections</Link> </Navbar.Link>
         <Navbar.Link href="#" active={navActive.third} onClick={() =>setNavActive({first: false, second: false , third: true , fourth: false , fifth: false , sixth: false})}><Link to='/echipe' element={<Echipe />}>Teams</Link></Navbar.Link>
         <Navbar.Link href="#" active={navActive.fourth} onClick={() =>setNavActive({first: false, second: false , third: false , fourth: true , fifth: false , sixth: false})}><Link to='/galerie' element={<Galerie />}>Gallery</Link></Navbar.Link>
-        <Navbar.Link href="#" active={navActive.fifth} onClick={() =>setNavActive({first: false, second: false , third: false , fourth: false , fifth: true , sixth: false})}><Link to='/anunturi' element={<Anunturi />}>Anunturi</Link></Navbar.Link>
+        <Navbar.Link href="#" active={navActive.fifth} onClick={() =>setNavActive({first: false, second: false , third: false , fourth: false , fifth: true , sixth: false})}><Link to='/anunturi' element={<Anunturi />}>Announcements</Link></Navbar.Link>
         <Navbar.Link href="#" active={navActive.sixth} onClick={() =>setNavActive({first: false, second: false , third: false , fourth: false , fifth: false , sixth: true})}><Link to='/contact' element={<Contact />}>Contact</Link></Navbar.Link>
         {!user && <Navbar.Link href="#" active={navActive.seventh} ><Link to='/account' element={<Register />}>Login</Link></Navbar.Link>}
       </Navbar.Collapse>

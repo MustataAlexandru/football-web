@@ -79,7 +79,7 @@ export default function FirstPage(props) {
       <p className="font-normal text-gray-700 dark:text-gray-400">
         {announce.content}
       </p>
-      <p>by - {announce.created_by}</p>
+      <p style={{color: 'gray'}}>by {announce.created_by}</p>
     </Card>))}
     </div>
     </div>
