@@ -1,4 +1,5 @@
 import React, { useRef , useState} from 'react'
+import { FloatingLabel } from 'flowbite-react';
 import Foter from './Footer'
 import { Button, Label, TextInput , Textarea} from "flowbite-react";
 import { HiMail } from "react-icons/hi";
@@ -7,6 +8,7 @@ import {TiSocialFacebook , TiSocialInstagram , TiSocialLinkedin , TiSocialPinter
 import emailjs from '@emailjs/browser';
 import { Alert } from "flowbite-react";
 const textData = "At Universitatea Craiova, we are proud to stand as one of Romania's premier institutions of higher education, known for our commitment to excellence, innovation, and the development of young minds. Established in 1947, our university has grown to embody the spirit of education and research, fostering an environment where academic potentials are realized, and futures are shaped."
+
 
 export default function Contact() {
   const form = useRef();
@@ -34,8 +36,8 @@ export default function Contact() {
 
   return (
     <div className='c_container'>
-      <Alert className={`mg mt-2 width50 ${alert}`} color="info">
-      <span className="font-medium mg text-center">Email sent succesfully!</span>
+      <Alert className={`abs-middle width50 ${alert}`} color="info">
+      <span className="font-medium mg text-center">Email sent successfully!</span>
     </Alert>
         <ol className='icon_cont mg-t-2 animated_fadeIn'>
           <li><a href="https://facebook.com"><TiSocialFacebook style={{color: 'gray' , }} size={32}></TiSocialFacebook></a></li>
@@ -52,13 +54,11 @@ export default function Contact() {
       <div className='custom-flex animated_fadeIn'>
       <form type="submit" ref={form} onSubmit={submitHandler} className="custom_form">
 
-        <h1 className='text-center'><strong>Send us an email!</strong></h1>
+        
 
       <div className="">
-      <div className="mb-2 block">
-        <Label htmlFor="email4" value="Your email" />
-      </div>
-      <TextInput id="email4" name='email' type="email" rightIcon={HiMail} placeholder="example@mail.com" required />
+      
+      <FloatingLabel id="email4" name='email' type="email" rightIcon={HiMail} label="Your email" variant="outlined" required />
     </div>
     <div className="max-w-md">
       <div className="mb-2 block">

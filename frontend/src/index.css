@@ -447,7 +447,7 @@ img {
 }
 
 .container {
-  margin-top: 8rem;
+  margin-top: 5rem;
   animation:loading 0.5s ease-in;
 }
 .info_container {
@@ -455,12 +455,10 @@ img {
   margin-top : -0.06rem;
 }
 .t_container {
-  margin-top: 8rem;
-
   animation: loading 0.5s ease-in;
 }
 .c_container {
-  margin-top: 8rem;
+
 
   animation: loading 0.5s ease-in;
 }
@@ -515,11 +513,33 @@ article {
   width:60px;
   height: 60px;
   border-radius: 50%;
+  margin: 0 auto;
 }
 
 .custom_admin_user {
+  margin: 0 auto;
+}
+
+.admin-flex {
   display: flex;
-  gap: .4rem;
   align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #E5E7EB;
   margin-bottom: 1rem;
+}
+
+.abs-middle {
+  position: absolute;
+  top:10%;
+  right:38%;
+  z-index: 50;
+}
+
+.admin_container {
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+}
+
+.admin-user-info2 {
+  margin-left: 2rem;
 }

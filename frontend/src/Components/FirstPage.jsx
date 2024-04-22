@@ -17,7 +17,7 @@ export default function FirstPage(props) {
   };
 
   useEffect(() => {fetchAnnounces()}, [alert]);
-  console.log(announces);
+
   
   useEffect(() => {
     const timer = setTimeout(() => {

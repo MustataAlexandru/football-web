@@ -5,6 +5,7 @@ import { useState , useRef , useEffect} from "react";
 import { useUser } from "../ContextProvider/UserProvider";
 import { Navigate } from "react-router-dom";
 import { Progress } from "flowbite-react";
+import { FloatingLabel } from "flowbite-react";
 
 export default function Register() {
     const [progress, setProgress] = useState(0);
@@ -140,26 +141,26 @@ export default function Register() {
         <div className="mb-2 block">
           <Label htmlFor="email2" value="Your email" />
         </div>
-        <TextInput id="email2" type="email" placeholder="example@email.com" ref={emailRef} required shadow />
+        <FloatingLabel id="email2" type="email" label="example@email.com" variant="outlined" ref={emailRef} required shadow />
       </div>
       <div>
         <div className="mb-2 block">
           <Label htmlFor="username2" value="Your username" />
         </div>
-        <TextInput id="username2" type="text" placeholder="example" ref={userRef} required shadow />
+        <FloatingLabel id="username2" type="text" label="example" variant="outlined" ref={userRef} required shadow />
       </div>
       
       <div>
         <div className="mb-2 block">
           <Label htmlFor="password2" value="Your password" />
         </div>
-        <TextInput id="password2" type="password" placeholder="Your password" ref={passRef} required shadow />
+        <FloatingLabel id="password2" type="password" label="Your password" variant="outlined" ref={passRef} required shadow />
       </div>
       <div>
         <div className="mb-2 block">
           <Label htmlFor="repeat-password" value="Repeat password" />
         </div>
-        <TextInput id="repeat-password" type="password" placeholder="Re-type your password" ref={rePassRef} required shadow />
+        <FloatingLabel id="repeat-password" type="password" label="Re-type your password" variant="outlined" ref={rePassRef} required shadow />
       </div>
 
       <Button type="submit" onClick={() => setProgressVisible('visible')}>Register new account</Button>
@@ -170,26 +171,20 @@ export default function Register() {
       <div> 
         <form className="flex max-w-md flex-col gap-4 container box-shadow mg-t-2" onSubmit={loginHandler}>
         <div>
-            <h1 className="text-center"><strong>Login</strong></h1>
+            <h1 className="text-center mb-4"><strong>Login</strong></h1>
             
             
-          <div className="mb-2 block">
-            <Label htmlFor="username2" value="Your username" />
-          </div>
-          <TextInput id="username2" type="text" placeholder="example" ref={loginUserName} required shadow />
+          
+          <FloatingLabel id="username2" type="text" label="username" variant="outlined" ref={loginUserName} required shadow />
         </div>
         <div>
-          <div className="mb-2 block">
-            <Label htmlFor="password2" value="Your password" />
-          </div>
-          <TextInput id="username2" type="password" placeholder="Your password" ref={loginPassword} required shadow />
+       
+          <FloatingLabel id="username2" type="password" label="Your password" variant="outlined" ref={loginPassword} required shadow />
         </div>
         
         <div>
-          <div className="mb-2 block">
-            <Label htmlFor="password2" value="Re-type your password" />
-          </div>
-          <TextInput id="password2" type="password" placeholder="Re-type your password" ref={loginRePassword} required shadow />
+         
+          <FloatingLabel id="password2" type="password" label="Re-type your password" variant="outlined" ref={loginRePassword} required shadow />
         </div>
         <Button  type="submit" onClick={() => setProgressVisible('visible')}>Login</Button>
         <div className="flex gap-2 color-gray" style={{padding: '10px', margin: '0 auto'}}>

@@ -64,7 +64,7 @@ export default function Anunturi() {
     <div className='container'>
       {  user?.role === 1 && (<Button type="submit" className='width20' onClick={() => setIsAnnouncesModalOpen(true)}>Add announcement</Button>)}
       
-      <Alert className={`mg mt-2 width50 ${alert}`} color="info">
+      <Alert className={`abs-middle width50 ${alert}`} color="info">
       <span className="font-medium mg text-center">Succesfully added!</span>
     </Alert>
     <div className='announces_container'>

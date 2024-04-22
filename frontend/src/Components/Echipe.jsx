@@ -4,6 +4,7 @@ import "flowbite";
 import Foter from "./Footer";
 import { Alert } from "flowbite-react";
 import { useUser } from "../ContextProvider/UserProvider";
+import { FloatingLabel } from "flowbite-react";
 
 export default function Echipe() {
 
@@ -97,13 +98,20 @@ export default function Echipe() {
       });
   };
 
+
+ let counter = 0;
+ teams.forEach(() => {
+  counter += 1;
+ })
+    
   return (
     <div className="mt-2 t_container">
       { user && user.role === 1 &&
-      <Button className="width20" onClick={() => setIsTeamModalOpen(true)}>
+      <Button className="width20" style={{backgroundColor: '#327fa8'}} onClick={() => setIsTeamModalOpen(true)}>
         Add Team
       </Button>}
-      <Alert className={`mg mt-2 width50 ${alert}`} color="info">
+      <p className="text-center mt-2"><strong>Universitatea Craiova currently has {counter} active teams</strong></p>
+      <Alert className={`abs-middle width50 ${alert}`} color="info">
       <span className="font-medium mg text-center">Succesfully added!</span>
     </Alert>
       <div className="teams_container p-4"> 
@@ -163,12 +171,13 @@ export default function Echipe() {
             <Modal.Header>Add Player to the Team</Modal.Header>
             <Modal.Body>
               <form onSubmit={handleAddPlayer} className="flex flex-col gap-3">
-                <input
+                <FloatingLabel
                   type="text"
-                  className="form-input mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  
                   value={playerName}
                   onChange={(e) => setPlayerName(e.target.value)}
-                  placeholder="Enter player's name"
+                  label="Enter player's name"
+                  variant="outlined"
                   required
                 />
                 <Button type="submit">Submit</Button>
@@ -191,29 +200,31 @@ export default function Echipe() {
             <Modal.Header>Add New Team</Modal.Header>
             <Modal.Body>
               <form onSubmit={handleAddTeam} className="flex flex-col gap-3">
-                <input
+                <FloatingLabel
                   type="text"
-                  className="form-input mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+               
                   value={teamDetails.name}
                   onChange={(e) =>
                     setTeamDetails({ ...teamDetails, name: e.target.value })
                   }
-                  placeholder="Team Name"
+                  label="Team name"
+                  variant="outlined"
                   required
                 />
-                <input
+                <FloatingLabel
                   type="text"
-                  className="form-input mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              
                   value={teamDetails.manager}
                   onChange={(e) =>
                     setTeamDetails({ ...teamDetails, manager: e.target.value })
                   }
-                  placeholder="Manager"
+                  label="Manager"
+                  variant="outlined"
                   required
                 />
-                <input
+                <FloatingLabel
                   type="text"
-                  className="form-input mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                
                   value={teamDetails.administrator}
                   onChange={(e) =>
                     setTeamDetails({
@@ -221,22 +232,24 @@ export default function Echipe() {
                       administrator: e.target.value,
                     })
                   }
-                  placeholder="Administrator"
+                  label="Administrator"
+                  variant="outlined"
                   required
                 />
-                <input
+                <FloatingLabel
                   type="text"
-                  className="form-input mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              
                   value={teamDetails.coach}
                   onChange={(e) =>
                     setTeamDetails({ ...teamDetails, coach: e.target.value })
                   }
-                  placeholder="Coach"
+                  label="Coach"
+                  variant="outlined"
                   required
                 />
-                <input
+                <FloatingLabel
                   type="text"
-                  className="form-input mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                
                   value={teamDetails.description}
                   onChange={(e) =>
                     setTeamDetails({
@@ -244,7 +257,8 @@ export default function Echipe() {
                       description: e.target.value,
                     })
                   }
-                  placeholder="Description"
+                  label="Description"
+                  variant="outlined"
                   required
                 />
                 <Button type="submit">Submit</Button>
