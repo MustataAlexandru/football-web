@@ -27,7 +27,10 @@ export default function Anunturi() {
           content: content.trim()
     }) }
       )
-        .then(response => response.json())
+        .then(response => {
+          response.json()
+          console.log(response)        
+        })
         .then(()=>{
          setIsAnnouncesModalOpen(false);
          setTitle('');
@@ -46,9 +49,12 @@ export default function Anunturi() {
     const fetchAnnounces = () => {
       fetch("http://localhost:3001/announces")
         .then((res) => res.json())
-        .then(setAnnounces)
-        .catch((err) => console.error("Error loading teams:", err));
+        .then((prev) => setAnnounces(prev.map(
+          item => ({...item, created_at: item.created_at.toLocaleString()})
+        )))
+        .catch((err) => console.error("Error loading announces:", err));
     };
+    
 
     useEffect(() => {fetchAnnounces()}, [alert]);
     console.log(announces);
@@ -68,6 +74,7 @@ export default function Anunturi() {
         {announce.content}
       </p>
       <p>by - {announce.created_by}</p>
+      <p> {announce.created_at} </p>
     </Card>))}
     </div>
       {isAnnouncesModalOpen && (

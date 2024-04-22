@@ -10,6 +10,7 @@ import Register from "./Register";
 import FirstPage from "./FirstPage";
 import { useUser } from "../ContextProvider/UserProvider";
 import {useState} from 'react';
+import Admin from "./Admin";
 
 
 export default function Nav() {
@@ -47,7 +48,7 @@ export default function Nav() {
             <span className="block text-sm">{user.username}</span>
             <span className="block truncate text-sm font-medium">{user.email}</span>
           </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
+         {user && user.role === 0 && (<Dropdown.Item><Link to='/admin' element={<Admin />}>Admin</Link></Dropdown.Item>)}
           <Dropdown.Item>Settings</Dropdown.Item>
           <Dropdown.Item>Earnings</Dropdown.Item>
           <Dropdown.Divider />

@@ -15,6 +15,7 @@ import { UserProvider } from "./ContextProvider/UserProvider";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import {Button} from 'flowbite-react';
 import Foter from './Components/Footer';
+import Admin from './Components/Admin';
 
 
 function App() {
@@ -69,6 +70,7 @@ useEffect(() => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/anunturi" element={<Anunturi />} />
         <Route path='/account' element={<Register /> } />
+        <Route path='/admin' element ={<Admin />} />
         <Route path='*' element={<Navigate to='/account' />}/>
       </Routes>
     </div>
